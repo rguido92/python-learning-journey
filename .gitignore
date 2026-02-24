@@ -1,0 +1,16 @@
+# Entorno virtual — nunca subas esto a GitHub
+.venv/
+# Archivos compilados de Python (se generan solos)
+__pycache__/
+*.pyc
+# Caché de pytest y cobertura de tests
+.pytest_cache/
+.coverage
+htmlcov/
+# Variables de entorno (claves de API, contraseñas)
+.env
+# Archivos de distribución de paquetes
+*.egg-info/
+dist/
+# VS Code (opcional: algunos prefieren subir esto)
+.vscode/

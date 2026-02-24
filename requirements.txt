@@ -1,0 +1,3 @@
+# requirements.txt
+pytest>=7.0      # framework de testing (como JUnit)
+pytest-cov>=4.0  # genera reportes de cobertura de tests
