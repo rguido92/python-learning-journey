@@ -1,0 +1,16 @@
+date,title,author,genre,price,units_sold
+2024-01-05,Python Basics,John Smith,Programming,29.99,150
+2024-01-08,Data Science Guide,Maria Garcia,Technology,45.50,89
+2024-01-12,The Last Kingdom,Bernard Cornwell,Fiction,18.99,200
+2024-01-15,Clean Code,Robert Martin,Programming,55.00,120
+2024-01-18,Sapiens,Yuval Harari,Non-Fiction,35.99,175
+2024-01-22,Atomic Habits,James Clear,Self-Help,16.99,310
+2024-01-25,1984,George Orwell,Fiction,14.99,250
+2024-02-01,Machine Learning Basics,Andrew Ng,Technology,52.00,95
+2024-02-05,The Great Gatsby,F. Scott Fitzgerald,Fiction,12.99,180
+2024-02-08,Python for Data Analysis,Wes McKinney,Programming,48.99,140
+2024-02-12,Educated,Tara Westover,Biography,28.50,165
+2024-02-15,Introduction to Algorithms,CLRS,Programming,89.99,75
+2024-02-18,Thinking Fast and Slow,Daniel Kahneman,Psychology,32.99,110
+2024-02-22,The Midnight Library,Matt Haig,Fiction,19.99,220
+2024-02-25,SQL Performance Guide,Grant Fritchey,Technology,61.00,82
