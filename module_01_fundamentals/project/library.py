@@ -12,21 +12,12 @@ class Library:
             return None
     
     def search_by_title(self,title):
-        for book in self.books:
-            if book.title==title:
-                return book
-        return None
+        return next((book for book in self.books if book.title == title),None)
+    
 
 
     def get_books_by_author(self,author):
-        books_finded = []
-        for book in self.books:
-            if book.author==author:
-                books_finded.append(book)
-        return books_finded
+        return [book for book in self.books if book.author == author]
     
     def get_total_value(self):
-        value = 0
-        for book in self.books:
-            value+= book.price
-        return value
+        return sum(book.price for book in self.books)

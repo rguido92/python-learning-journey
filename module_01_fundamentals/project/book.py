@@ -5,10 +5,7 @@ class Book:
         self.price = price
 
     def apply_discount(self,percent):
-        if(percent>=100):
-            self.price = 0
-        else:
-            self.price = self.price * (1 - percent/100)
+        self.price = 0 if (percent>=100) else self.price * (1 - percent/100)
         return self.price
         
     
