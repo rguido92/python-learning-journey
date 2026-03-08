@@ -8,4 +8,4 @@ analysis = CatalogueAnalysis("module_02_data_analysis/data/sales.csv")
 visualizer = SalesVisualizer(analysis)
 
 # Prueba el método
-visualizer.sales_over_time()
+# visualizer.sales_over_time()

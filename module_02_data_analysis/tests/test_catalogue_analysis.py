@@ -24,13 +24,13 @@ def test_get_best_seller(analisis):
 
 def test_get_revenue_by_genre(analisis):
     resultado = analisis.get_revenue_by_genre()
-    assert isinstance(resultado, pd.Series)
-    assert resultado.sum() == analisis.get_total_revenue()
+    assert isinstance(resultado, dict)
+    assert sum(resultado.values()) == analisis.get_total_revenue()
 
 
 def test_get_top_authors(analisis):
     resultado = analisis.get_top_authors(3)
-    assert isinstance(resultado, pd.Series)
+    assert isinstance(resultado, dict)
     assert len(resultado) == 3
 
 
