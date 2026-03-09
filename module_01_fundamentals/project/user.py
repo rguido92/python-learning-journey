@@ -18,5 +18,12 @@ class User:
         return sum(book.price for book in self.shopping_cart)
 
     def __str__(self):
-        cart_str = "\n".join(str(book) for book in self.shopping_cart)
+        # devolver una cadena formateada para facil lectura
+        cart_str = "\n".join(
+            [
+                f"- {book.title} by {book.author} (${book.price})"
+                for book in self.shopping_cart
+            ]
+        )
+
         return f"Username: {self.name}\nEmail: {self.email}\nShopping cart:{cart_str}"
