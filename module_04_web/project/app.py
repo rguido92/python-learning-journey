@@ -4,6 +4,8 @@ from module_01_fundamentals.project.book import Book
 from module_01_fundamentals.project.library import Library
 from module_03_automation.project.file_manager import FileManager
 from module_02_data_analysis.project.catalogue_analysis import CatalogueAnalysis
+from module_05_advanced.project.decorators import measure_time, log_call
+from module_05_advanced.project.generators import paginate_books
 
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
 SALES_CSV = BASE_DIR / "module_02_data_analysis" / "data" / "sales.csv"
@@ -26,12 +28,27 @@ def create_app():
 
     @app.route("/books", methods=["GET"])
     def list_books():
-        return jsonify([
+        page = request.args.get("page", default=None, type=int)
+        page_size = request.args.get("page_size", default=10, type=int)
+        all_books = [
             {"title": b.title, "author": b.author, "price": b.price}
             for b in library.books
-        ])
+        ]
+        if page is not None:
+            pages = list(paginate_books(all_books, page_size))
+            if page < 1 or page > len(pages):
+                return jsonify({"error": "Page out of range"}), 404
+            return jsonify({
+                "page": page,
+                "page_size": page_size,
+                "total_pages": len(pages),
+                "total_books": len(all_books),
+                "books": pages[page - 1],
+            })
+        return jsonify(all_books)
 
     @app.route("/books/<title>", methods=["GET"])
+    @measure_time
     def get_book(title):
         book = library.search_by_title(title)
         if book is None:
@@ -39,6 +56,7 @@ def create_app():
         return jsonify({"title": book.title, "author": book.author, "price": book.price})
 
     @app.route("/books", methods=["POST"])
+    @measure_time
     def add_book():
         data = request.get_json(silent=True)
         if not data or not all(k in data for k in ("title", "author", "price")):
@@ -111,11 +129,13 @@ def create_app():
         return CatalogueAnalysis(str(SALES_CSV))
 
     @app.route("/sales/revenue", methods=["GET"])
+    @log_call
     def total_revenue():
         analysis = get_sales_analysis()
         return jsonify({"total_revenue": analysis.get_total_revenue()})
 
     @app.route("/sales/best-seller", methods=["GET"])
+    @log_call
     def best_seller():
         analysis = get_sales_analysis()
         return jsonify({"best_seller": analysis.get_best_seller()})

@@ -25,6 +25,26 @@ class TestLibraryRoutes:
         assert isinstance(data, list)
         assert len(data) == 3
 
+    def test_list_books_paginated_page_1(self, client):
+        resp = client.get("/books?page=1&page_size=2")
+        assert resp.status_code == 200
+        data = resp.get_json()
+        assert data["page"] == 1
+        assert data["page_size"] == 2
+        assert data["total_pages"] == 2
+        assert data["total_books"] == 3
+        assert len(data["books"]) == 2
+
+    def test_list_books_paginated_page_2(self, client):
+        resp = client.get("/books?page=2&page_size=2")
+        assert resp.status_code == 200
+        data = resp.get_json()
+        assert len(data["books"]) == 1
+
+    def test_list_books_paginated_out_of_range(self, client):
+        resp = client.get("/books?page=99&page_size=2")
+        assert resp.status_code == 404
+
     def test_get_book_found(self, client):
         resp = client.get("/books/1984")
         assert resp.status_code == 200

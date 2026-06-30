@@ -14,7 +14,7 @@ Rather than isolated exercises, every module contributes to a single coherent sy
 | 02 | Data Analysis and Visualization | Complete |
 | 03 | Automation and Scripting | Complete |
 | 04 | Web Development with Python | Complete |
-| 05 | Advanced Python Techniques | Pending |
+| 05 | Advanced Python Techniques | Complete |
 | 06 | Project Development and Career | Pending |
 
 ---
@@ -85,7 +85,7 @@ pytest module_01_fundamentals/
 pytest --cov=. --cov-report=term-missing
 ```
 
-Current status: **45 tests passing**
+Current status: **81 tests passing**
 
 ---
 
@@ -125,6 +125,12 @@ REST API with Flask integrating all previous modules:
 - Library search and filter
 - Catalogue export/import via API
 - Sales data and chart endpoints
+
+### Module 05 - Advanced Python Techniques
+Advanced Python concepts applied to the bookstore system:
+- **Decorators**: `@log_call`, `@measure_time`, `@retry` applied to Flask routes, FileManager, and CatalogueAnalysis
+- **Generators**: `paginate_books` for paginated book listings, `chunked_import` and `stream_csv_rows` for efficient data processing
+- **Context Managers**: `Timer` for measuring execution time, `ManagedFile` for safe file handling, `ChangeDirectory` for temporary directory changes
 
 ---
 
