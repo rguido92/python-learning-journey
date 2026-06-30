@@ -11,9 +11,9 @@ Rather than isolated exercises, every module contributes to a single coherent sy
 | Module | Topic | Status |
 |--------|-------|--------|
 | 01 | Python Fundamentals | Complete |
-| 02 | Data Analysis and Visualization | In progress |
-| 03 | Automation and Scripting | Pending |
-| 04 | Web Development with Python | Pending |
+| 02 | Data Analysis and Visualization | Complete |
+| 03 | Automation and Scripting | Complete |
+| 04 | Web Development with Python | Complete |
 | 05 | Advanced Python Techniques | Pending |
 | 06 | Project Development and Career | Pending |
 
@@ -85,7 +85,7 @@ pytest module_01_fundamentals/
 pytest --cov=. --cov-report=term-missing
 ```
 
-Current status: **20 tests passing**
+Current status: **45 tests passing**
 
 ---
 
@@ -108,11 +108,23 @@ Core domain classes for the bookstore system:
 - `Library` - collection management, search, filtering
 - `User` - shopping cart, total calculation
 
-### Module 02 - Data Analysis (in progress)
+### Module 02 - Data Analysis
 Sales and catalogue analysis using pandas and Matplotlib:
 - Dataset loading and cleaning
 - Exploratory data analysis
 - Sales visualizations
+
+### Module 03 - Automation
+File management and data serialization:
+- CSV and JSON export/import
+- Error handling and directory creation
+
+### Module 04 - Web Development
+REST API with Flask integrating all previous modules:
+- Book CRUD endpoints
+- Library search and filter
+- Catalogue export/import via API
+- Sales data and chart endpoints
 
 ---
 

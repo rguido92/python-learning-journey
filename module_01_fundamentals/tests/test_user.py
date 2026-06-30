@@ -52,7 +52,7 @@ def test_user_str_representation():
     user.shopping_cart.append(book)
     assert (
         str(user)
-        == "Username: Rodrigo\nEmail: rodrigo@gmail.com\nShopping cart:Clean Code by Robert Martin - 35.0€\nPython Crash Course by Eric Matthes - 29.99€"
+        == "Username: Rodrigo\nEmail: rodrigo@gmail.com\nShopping cart:- Clean Code by Robert Martin ($35.0)\n- Python Crash Course by Eric Matthes ($29.99)"
     )
 
 

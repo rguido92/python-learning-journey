@@ -14,3 +14,5 @@ htmlcov/
 dist/
 # VS Code (opcional: algunos prefieren subir esto)
 .vscode/
+# Exportaciones generadas por tests
+module_04_web/exports/

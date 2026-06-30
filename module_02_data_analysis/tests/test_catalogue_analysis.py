@@ -1,8 +1,9 @@
+from pathlib import Path
 import pytest
 import pandas as pd
 from module_02_data_analysis.project.catalogue_analysis import CatalogueAnalysis
 
-CSV_PATH = "module_02_data_analysis/data/sales.csv"
+CSV_PATH = str(Path(__file__).resolve().parent.parent / "data" / "sales.csv")
 
 
 @pytest.fixture
