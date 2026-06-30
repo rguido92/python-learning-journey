@@ -15,7 +15,7 @@ Rather than isolated exercises, every module contributes to a single coherent sy
 | 03 | Automation and Scripting | Complete |
 | 04 | Web Development with Python | Complete |
 | 05 | Advanced Python Techniques | Complete |
-| 06 | Project Development and Career | Pending |
+| 06 | Project Development and Career | Complete |
 
 ---
 
@@ -85,7 +85,7 @@ pytest module_01_fundamentals/
 pytest --cov=. --cov-report=term-missing
 ```
 
-Current status: **81 tests passing**
+Current status: **81 tests passing — all modules complete**
 
 ---
 
@@ -131,6 +131,14 @@ Advanced Python concepts applied to the bookstore system:
 - **Decorators**: `@log_call`, `@measure_time`, `@retry` applied to Flask routes, FileManager, and CatalogueAnalysis
 - **Generators**: `paginate_books` for paginated book listings, `chunked_import` and `stream_csv_rows` for efficient data processing
 - **Context Managers**: `Timer` for measuring execution time, `ManagedFile` for safe file handling, `ChangeDirectory` for temporary directory changes
+
+### Module 06 - Project Development and Career
+Production-ready project packaging and tooling:
+- **`pyproject.toml`**: Package configuration with entry point (`plj` CLI command)
+- **`cli.py`**: Click-based CLI (`serve`, `test`, `export`, `sales`, `add`, `books`)
+- **`Dockerfile`**: Containerized Flask API for deployment
+- **GitHub Actions CI**: Automated test runner across Python 3.10-3.12
+- **`Makefile`**: Convenience commands (`test`, `serve`, `lint`, `clean`)
 
 ---
 
